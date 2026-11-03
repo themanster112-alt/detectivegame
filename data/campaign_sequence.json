@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "popularity_awards": {
+    "supported": 10,
+    "acquitted": -5
+  },
+  "cases": [
+    {
+      "id": "last_call",
+      "title": "المكالمة الأخيرة",
+      "path": "res://data/cases/last_call.json"
+    },
+    {
+      "id": "case_02",
+      "title": "القضية الثانية",
+      "path": ""
+    }
+  ]
+}

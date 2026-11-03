@@ -1,0 +1,53 @@
+[gd_resource type="Resource" load_steps=33 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/visual_catalog.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/Cinematic Arabic Reception Lobby at Night.png" id="2"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/Rainy Night Detective Office.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/characters/hero/Accusing Detective Noir Pose.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/characters/hero/Brooding Noir Detective Portrait.png" id="5"]
+[ext_resource type="Texture2D" path="res://assets/characters/hero/Contemplative Detective in Dark Formalwear.png" id="6"]
+[ext_resource type="Texture2D" path="res://assets/characters/layla/chr_layla_concerned.png" id="7"]
+[ext_resource type="Texture2D" path="res://assets/characters/layla/chr_layla_defensive.png" id="8"]
+[ext_resource type="Texture2D" path="res://assets/characters/layla/chr_layla_neutral.png" id="9"]
+[ext_resource type="Texture2D" path="res://assets/characters/mazen/chr_mazen_concerned.png" id="10"]
+[ext_resource type="Texture2D" path="res://assets/characters/mazen/chr_mazen_defensive.png" id="11"]
+[ext_resource type="Texture2D" path="res://assets/characters/mazen/chr_mazen_neutral.png" id="12"]
+[ext_resource type="Texture2D" path="res://assets/characters/nadine/chr_nadine_concerned.png" id="13"]
+[ext_resource type="Texture2D" path="res://assets/characters/nadine/chr_nadine_defensive.png" id="14"]
+[ext_resource type="Texture2D" path="res://assets/characters/nadine/chr_nadine_neutral.png" id="15"]
+[ext_resource type="Texture2D" path="res://assets/characters/samer/chr_mazen_neutral.png" id="16"]
+[ext_resource type="Texture2D" path="res://assets/characters/samer/chr_samer_defensive.png" id="17"]
+[ext_resource type="Texture2D" path="res://assets/characters/samer/chr_samer_neutral.png" id="18"]
+[ext_resource type="Texture2D" path="res://assets/evidence/evidence_1_statue.png" id="19"]
+[ext_resource type="Texture2D" path="res://assets/evidence/evidence_2_phone.png" id="20"]
+[ext_resource type="Texture2D" path="res://assets/evidence/evidence_3_financial_file.png" id="21"]
+[ext_resource type="Texture2D" path="res://assets/evidence/evidence_4_access_card.png" id="22"]
+[ext_resource type="Texture2D" path="res://assets/evidence/evidence_5_office_photo.png" id="23"]
+[ext_resource type="Texture2D" path="res://assets/evidence/evidence_6_fibers.png" id="24"]
+[ext_resource type="Texture2D" path="res://assets/evidence/evidence_7_threat_note.png" id="25"]
+[ext_resource type="Texture2D" path="res://assets/evidence/evidence_8_cctv.png" id="26"]
+[ext_resource type="Texture2D" path="res://assets/evidence/evidence_9_forensic_report.png" id="27"]
+
+[ext_resource type="Texture2D" path="res://assets/evidence/evidence_7_bag_inspection.png" id="evidence_security_log"]
+[ext_resource type="Texture2D" path="res://assets/evidence/evidence_10_cabinet_log.png" id="evidence_locker_access"]
+[ext_resource type="Texture2D" path="res://assets/evidence/evidence_12_server_camera_logs.png" id="evidence_server_logs"]
+[ext_resource type="Texture2D" path="res://assets/evidence/evidence_14_brother_complaint.png" id="evidence_layla_file"]
+[ext_resource type="Texture2D" path="res://assets/evidence/evidence_15_transfer_ledger.png" id="evidence_fraud_ledger"]
+
+[resource]
+script = ExtResource("1")
+backgrounds = {}
+background_files = {"office":"res://assets/backgrounds/Rainy Night Detective Office.png","reception":"res://assets/backgrounds/Cinematic Arabic Reception Lobby at Night.png"}
+characters = {"nadine": ExtResource("15"), "layla": ExtResource("9"), "mazen": ExtResource("12"), "samer": ExtResource("18")}
+character_expressions = {"nadine:neutral": ExtResource("15"), "nadine:concerned": ExtResource("13"), "nadine:defensive": ExtResource("14"), "layla:neutral": ExtResource("9"), "layla:concerned": ExtResource("7"), "layla:defensive": ExtResource("8"), "mazen:neutral": ExtResource("12"), "mazen:concerned": ExtResource("10"), "mazen:defensive": ExtResource("11"), "samer:neutral": ExtResource("18"), "samer:concerned": ExtResource("16"), "samer:defensive": ExtResource("17")}
+character_files = {"nadine:neutral":"res://assets/characters/nadine/chr_nadine_neutral.png","nadine:concerned":"res://assets/characters/nadine/chr_nadine_concerned.png","nadine:defensive":"res://assets/characters/nadine/chr_nadine_defensive.png","layla:neutral":"res://assets/characters/layla/chr_layla_neutral.png","layla:concerned":"res://assets/characters/layla/chr_layla_concerned.png","layla:defensive":"res://assets/characters/layla/chr_layla_defensive.png","mazen:neutral":"res://assets/characters/mazen/chr_mazen_neutral.png","mazen:concerned":"res://assets/characters/mazen/chr_mazen_concerned.png","mazen:defensive":"res://assets/characters/mazen/chr_mazen_defensive.png","samer:neutral":"res://assets/characters/samer/chr_samer_neutral.png","samer:concerned":"res://assets/characters/samer/chr_mazen_neutral.png","samer:defensive":"res://assets/characters/samer/chr_samer_defensive.png"}
+evidence = {"call_log": ExtResource("20"), "finance_memo": ExtResource("21"), "security_log": ExtResource("evidence_security_log"), "locker_find": ExtResource("19"), "statue_photo": ExtResource("23"), "locker_access": ExtResource("evidence_locker_access"), "bag_fibers": ExtResource("24"), "server_logs": ExtResource("evidence_server_logs"), "mazen_threats": ExtResource("25"), "layla_file": ExtResource("evidence_layla_file"), "fraud_ledger": ExtResource("evidence_fraud_ledger"), "forensic_initial": ExtResource("27")}
+evidence_files = {"door_events":"res://assets/evidence/evidence_1_lock_log.png","desk_inventory":"res://assets/evidence/evidence_2_empty_statue_spot.png","call_log":"res://assets/evidence/evidence_2_phone.png","finance_memo":"res://assets/evidence/evidence_3_financial_file.png","call_recording":"res://assets/evidence/evidence_5_call_recording.png","audio_archive":"res://assets/evidence/evidence_6_voice_archive.png","security_log":"res://assets/evidence/evidence_7_bag_inspection.png","locker_find":"res://assets/evidence/evidence_1_statue.png","statue_photo":"res://assets/evidence/evidence_5_office_photo.png","locker_access":"res://assets/evidence/evidence_10_cabinet_log.png","bag_fibers":"res://assets/evidence/evidence_6_fibers.png","server_logs":"res://assets/evidence/evidence_12_server_camera_logs.png","mazen_threats":"res://assets/evidence/evidence_7_threat_note.png","layla_file":"res://assets/evidence/evidence_14_brother_complaint.png","fraud_ledger":"res://assets/evidence/evidence_15_transfer_ledger.png","forensic_initial":"res://assets/evidence/evidence_9_forensic_report.png"}
+character_placements = {"nadine": Rect2(0.04, 0.30, 0.23, 0.48), "layla": Rect2(0.04, 0.30, 0.23, 0.48), "mazen": Rect2(0.04, 0.30, 0.23, 0.48), "samer": Rect2(0.04, 0.30, 0.23, 0.48)}
+dialogue_placements = {"nadine": Rect2(0.04, 0.01, 0.38, 0.85), "layla": Rect2(0.04, 0.01, 0.38, 0.85), "mazen": Rect2(0.04, 0.01, 0.38, 0.85), "samer": Rect2(0.04, 0.01, 0.38, 0.85)}
+dialogue_expressions = {"layla:0": "neutral", "layla:1": "concerned", "nadine:0": "neutral", "nadine:1": "concerned", "samer:0": "neutral", "samer:1": "concerned", "mazen:0": "neutral", "mazen:1": "defensive"}
+art_requirements = {}
+art_notices = {"door_events":"صورة توضيحية للدليل؛ النص المعتمد يحدد تفاصيله وتوقيته.","desk_inventory":"صورة توضيحية للدليل؛ النص المعتمد يحدد تفاصيله وتوقيته.","call_log":"رسم توضيحي للهاتف؛ الجهاز مفقود ولم يُضبط. المرجع هو سجل الاتصالات، لا تفاصيل الشاشة المرسومة.","finance_memo":"صورة توضيحية للدليل؛ النص المعتمد يحدد تفاصيله وتوقيته.","call_recording":"صورة توضيحية للدليل؛ النص المعتمد يحدد تفاصيله وتوقيته.","audio_archive":"صورة توضيحية للدليل؛ النص المعتمد يحدد تفاصيله وتوقيته.","security_log":"صورة توضيحية للدليل؛ النص المعتمد يحدد تفاصيله وتوقيته.","locker_find":"صورة توضيحية للدليل؛ النص المعتمد يحدد تفاصيله وتوقيته.","statue_photo":"صورة توضيحية للدليل؛ النص المعتمد يحدد تفاصيله وتوقيته.","locker_access":"صورة توضيحية للدليل؛ النص المعتمد يحدد تفاصيله وتوقيته.","bag_fibers":"صورة توضيحية للدليل؛ النص المعتمد يحدد تفاصيله وتوقيته.","server_logs":"صورة توضيحية للدليل؛ النص المعتمد يحدد تفاصيله وتوقيته.","mazen_threats":"صورة توضيحية للدليل؛ النص المعتمد يحدد تفاصيله وتوقيته.","layla_file":"صورة توضيحية للدليل؛ النص المعتمد يحدد تفاصيله وتوقيته.","fraud_ledger":"صورة توضيحية للدليل؛ النص المعتمد يحدد تفاصيله وتوقيته.","forensic_initial":"صورة توضيحية للتقرير؛ النص المعتمد يحدد النتائج والتوقيت."}
+question_expressions = {"nadine:exit":"defensive","nadine:finance":"defensive","nadine:locker_response":"concerned","layla:old_bell":"concerned","layla:search":"defensive","samer:camera_cause":"defensive","samer:server_admission":"concerned","mazen:threat_denial":"defensive","mazen:threat_admission":"concerned"}
+person_regions = {"adam_office:nadine": Rect2(0.865, 0.52, 0.07, 0.12), "adam_office:mazen": Rect2(0.12, 0.63, 0.12, 0.14), "reception:layla": Rect2(0.16, 0.49, 0.09, 0.12), "reception:samer": Rect2(0.89, 0.29, 0.075, 0.19)}
+inspection_fallbacks = {}

@@ -1,0 +1,98 @@
+{
+  "schema_version": 2,
+  "revision": 1,
+  "id": "replace_case_id",
+  "title": "عنوان القضية",
+  "target_duration_minutes": 15,
+  "case_file": {
+    "number": "CASE-001",
+    "crime_type": "custom",
+    "crime_label": "نوع الجريمة",
+    "summary": "ملخص الحادث",
+    "victim": {
+      "name": "اسم المتضرر",
+      "background": "وظيفته أو خلفيته"
+    },
+    "crime_scene": "scene"
+  },
+  "assistant": {
+    "name": "مساعد المحقق",
+    "briefing": "إحاطة موجزة من إعداد كاتب القضية"
+  },
+  "start_location": "scene",
+  "locations": [
+    {
+      "id": "scene",
+      "name": "اسم الموقع",
+      "description": "وصف الموقع",
+      "requires": {}
+    }
+  ],
+  "people": [
+    {
+      "id": "suspect_alpha",
+      "name": "اسم المشتبه به",
+      "role": "suspect",
+      "occupation": "وظيفته أو خلفيته",
+      "location_id": "",
+      "position": [
+        0.14,
+        0.81
+      ],
+      "statement_ids": [],
+      "requires": {},
+      "ai": {
+        "personality": "أسلوب تجريبي",
+        "speech_style": "مقتضب",
+        "knows": [],
+        "conceals": [],
+        "lies": [],
+        "known_evidence": []
+      }
+    }
+  ],
+  "evidence": [],
+  "statements": [],
+  "facts": [],
+  "questions": [],
+  "reports": [
+    {
+      "id": "initial",
+      "title": "التقرير الأولي",
+      "kind": "technical",
+      "summary": "محتوى التقرير من إعداد الكاتب",
+      "status": "preliminary",
+      "findings": [],
+      "cause_of_death": "",
+      "estimated_time": "",
+      "requires": {}
+    }
+  ],
+  "timeline": [],
+  "inference_options": [
+    {
+      "id": "supports",
+      "label": "يدعم هذا الربط"
+    },
+    {
+      "id": "alternative",
+      "label": "تفسير بديل"
+    }
+  ],
+  "inferences": [],
+  "contradictions": [],
+  "truth": {
+    "culprit_ids": [
+      "suspect_alpha"
+    ],
+    "summary": "الحقيقة الثابتة التي يحددها كاتب القضية"
+  },
+  "assessment": {
+    "threshold": 2,
+    "minimum_groups": 1,
+    "profiles": []
+  },
+  "campaign_effects": {},
+  "requirements": {},
+  "allow_reopen": true
+}

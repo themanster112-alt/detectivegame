@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/location_view.gd" id="1"]
+[ext_resource type="Resource" path="res://assets/ui/noir_visual_catalog.tres" id="2"]
+
+[node name="LocationView" type="Control"]
+custom_minimum_size = Vector2(0, 280)
+layout_mode = 0
+size_flags_vertical = 3
+script = ExtResource("1")
+visual_catalog = ExtResource("2")
+
+[node name="Stage16x9" type="Control" parent="."]
+clip_contents = true
+mouse_filter = 2
+
+[node name="Background" type="TextureRect" parent="Stage16x9"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CharactersLayer" type="Control" parent="Stage16x9"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="EvidenceLayer" type="Control" parent="Stage16x9"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="HotspotsLayer" type="Control" parent="Stage16x9"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2

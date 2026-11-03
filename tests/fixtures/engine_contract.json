@@ -1,0 +1,451 @@
+{
+  "schema_version": 2,
+  "revision": 1,
+  "id": "engine_contract",
+  "title": "اختبار المحرك العام",
+  "target_duration_minutes": 15,
+  "case_file": {
+    "number": "TEST-02",
+    "crime_type": "murder",
+    "crime_label": "اختبار نوع جريمة",
+    "summary": "بيانات اصطناعية لاختبار البنية فقط.",
+    "victim": {
+      "name": "متضرر اختبار",
+      "background": "بيانات اختبار"
+    },
+    "crime_scene": "scene"
+  },
+  "assistant": {
+    "name": "مساعد الاختبار",
+    "briefing": "بيانات اختبار موجزة."
+  },
+  "start_location": "scene",
+  "locations": [
+    {
+      "id": "scene",
+      "name": "موقع الاختبار",
+      "description": "موقع أول",
+      "requires": {}
+    },
+    {
+      "id": "lab",
+      "name": "مختبر الاختبار",
+      "description": "موقع ثان",
+      "requires": {}
+    },
+    {
+      "id": "annex",
+      "name": "موقع ثالث",
+      "description": "موقع ثالث",
+      "requires": {}
+    }
+  ],
+  "people": [
+    {
+      "id": "suspect_alpha",
+      "name": "شخصية اختبار suspect_alpha",
+      "role": "suspect",
+      "occupation": "صفة اختبار",
+      "location_id": "",
+      "position": [
+        0.14,
+        0.81
+      ],
+      "statement_ids": [],
+      "requires": {},
+      "ai": {
+        "personality": "أسلوب تجريبي",
+        "speech_style": "مقتضب",
+        "knows": [],
+        "conceals": [],
+        "lies": [],
+        "known_evidence": [
+          "sample"
+        ]
+      }
+    },
+    {
+      "id": "suspect_beta",
+      "name": "شخصية اختبار suspect_beta",
+      "role": "suspect",
+      "occupation": "صفة اختبار",
+      "location_id": "",
+      "position": [
+        0.14,
+        0.81
+      ],
+      "statement_ids": [
+        "statement_b"
+      ],
+      "requires": {},
+      "ai": {
+        "personality": "أسلوب تجريبي",
+        "speech_style": "مقتضب",
+        "knows": [],
+        "conceals": [],
+        "lies": [],
+        "known_evidence": [
+          "sample"
+        ]
+      }
+    },
+    {
+      "id": "suspect_gamma",
+      "name": "شخصية اختبار suspect_gamma",
+      "role": "suspect",
+      "occupation": "صفة اختبار",
+      "location_id": "",
+      "position": [
+        0.14,
+        0.81
+      ],
+      "statement_ids": [],
+      "requires": {},
+      "ai": {
+        "personality": "أسلوب تجريبي",
+        "speech_style": "مقتضب",
+        "knows": [],
+        "conceals": [],
+        "lies": [],
+        "known_evidence": [
+          "sample"
+        ]
+      }
+    },
+    {
+      "id": "suspect_delta",
+      "name": "شخصية اختبار suspect_delta",
+      "role": "suspect",
+      "occupation": "صفة اختبار",
+      "location_id": "",
+      "position": [
+        0.14,
+        0.81
+      ],
+      "statement_ids": [],
+      "requires": {},
+      "ai": {
+        "personality": "أسلوب تجريبي",
+        "speech_style": "مقتضب",
+        "knows": [],
+        "conceals": [],
+        "lies": [],
+        "known_evidence": [
+          "sample"
+        ]
+      }
+    },
+    {
+      "id": "witness_a",
+      "name": "شخصية اختبار witness_a",
+      "role": "witness",
+      "occupation": "صفة اختبار",
+      "location_id": "scene",
+      "position": [
+        0.14,
+        0.81
+      ],
+      "statement_ids": [
+        "statement_a"
+      ],
+      "requires": {},
+      "ai": {
+        "personality": "أسلوب تجريبي",
+        "speech_style": "مقتضب",
+        "knows": [
+          "fact_a"
+        ],
+        "conceals": [
+          "secret_a"
+        ],
+        "lies": [],
+        "known_evidence": [
+          "sample"
+        ]
+      }
+    },
+    {
+      "id": "witness_b",
+      "name": "شخصية اختبار witness_b",
+      "role": "witness",
+      "occupation": "صفة اختبار",
+      "location_id": "",
+      "position": [
+        0.14,
+        0.81
+      ],
+      "statement_ids": [],
+      "requires": {},
+      "ai": {
+        "personality": "أسلوب تجريبي",
+        "speech_style": "مقتضب",
+        "knows": [],
+        "conceals": [],
+        "lies": [],
+        "known_evidence": [
+          "sample"
+        ]
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "sample",
+      "name": "عينة اختبار",
+      "description": "دليل لاختبار المنطق",
+      "source": "اختبار",
+      "time": "وقت اختبار",
+      "category": "مادي",
+      "location_id": "scene",
+      "position": [
+        0.35,
+        0.75
+      ],
+      "requires": {}
+    },
+    {
+      "id": "misleading",
+      "name": "مادة اختبار ثانية",
+      "description": "دليل اختبار بديل",
+      "source": "اختبار",
+      "time": "وقت اختبار",
+      "category": "وثيقة",
+      "location_id": "annex",
+      "position": [
+        0.6,
+        0.75
+      ],
+      "requires": {}
+    }
+  ],
+  "statements": [
+    {
+      "id": "statement_a",
+      "person_id": "witness_a",
+      "text": "قول اختبار قصير.",
+      "status": "claimed",
+      "requires": {}
+    },
+    {
+      "id": "statement_b",
+      "person_id": "suspect_beta",
+      "text": "قول ثان للاختبار.",
+      "status": "claimed",
+      "requires": {
+        "evidence": [
+          "sample"
+        ]
+      }
+    }
+  ],
+  "facts": [
+    {
+      "id": "fact_a",
+      "text": "إجابة اختبار.",
+      "variants": [
+        "صياغة اختبار معتمدة."
+      ],
+      "requires": {}
+    },
+    {
+      "id": "secret_a",
+      "text": "معلومة محمية للاختبار.",
+      "variants": [],
+      "requires": {
+        "contradictions": [
+          "contradiction_a"
+        ]
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "question_a",
+      "person_id": "witness_a",
+      "label": "سؤال اختبار",
+      "answer_facts": [
+        "fact_a"
+      ],
+      "requires": {}
+    },
+    {
+      "id": "question_hidden",
+      "person_id": "witness_a",
+      "label": "سؤال مشروط",
+      "answer_facts": [
+        "secret_a"
+      ],
+      "requires": {
+        "evidence": [
+          "sample"
+        ]
+      }
+    }
+  ],
+  "reports": [
+    {
+      "id": "initial",
+      "title": "تقرير اختبار أولي",
+      "kind": "forensic",
+      "summary": "نتائج اختبار أولية.",
+      "status": "preliminary",
+      "findings": [
+        "نتيجة أولية للاختبار"
+      ],
+      "cause_of_death": "قيمة اختبار غير نهائية",
+      "estimated_time": "مدى زمني للاختبار",
+      "requires": {}
+    },
+    {
+      "id": "updated",
+      "title": "تحديث تقرير الاختبار",
+      "kind": "forensic",
+      "summary": "تحديث مشروط للاختبار.",
+      "status": "confirmed",
+      "findings": [],
+      "cause_of_death": "قيمة اختبار محدثة",
+      "estimated_time": "مدى زمني محدث",
+      "supersedes": "initial",
+      "requires": {
+        "evidence": [
+          "sample"
+        ]
+      }
+    }
+  ],
+  "timeline": [
+    {
+      "id": "event_a",
+      "time": "٢٣:٣٠ تقريبًا",
+      "text": "حدث اختبار غير مؤكد",
+      "status": "uncertain",
+      "order": 1,
+      "requires": {
+        "statements": [
+          "statement_a"
+        ]
+      }
+    },
+    {
+      "id": "event_b",
+      "time": "٢٣:٢٠",
+      "text": "وقت مسجل للاختبار",
+      "status": "confirmed",
+      "order": 0,
+      "requires": {
+        "evidence": [
+          "sample"
+        ]
+      }
+    }
+  ],
+  "inference_options": [
+    {
+      "id": "supports",
+      "label": "يدعم هذا الربط"
+    },
+    {
+      "id": "alternative",
+      "label": "تفسير بديل"
+    }
+  ],
+  "inferences": [
+    {
+      "id": "relation_a",
+      "meaning": "supports",
+      "links": [
+        "e:sample",
+        "s:statement_a"
+      ],
+      "explanation": "ربط مسنود بين معلومتين للاختبار.",
+      "requires": {}
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "contradiction_a",
+      "person_id": "witness_a",
+      "question_id": "question_a",
+      "evidence_id": "sample",
+      "explanation": "تناقض موثق للاختبار.",
+      "requires": {}
+    }
+  ],
+  "truth": {
+    "culprit_ids": [
+      "suspect_alpha"
+    ],
+    "summary": "حقيقة ثابتة لأغراض الاختبار فقط."
+  },
+  "assessment": {
+    "threshold": 2,
+    "minimum_groups": 1,
+    "profiles": [
+      {
+        "suspect_id": "suspect_alpha",
+        "criteria": [
+          {
+            "id": "primary",
+            "all_of": [
+              "e:sample",
+              "s:statement_a",
+              "i:relation_a"
+            ],
+            "weight": 2,
+            "group": "linked",
+            "reliability": "valid"
+          },
+          {
+            "id": "alternative",
+            "all_of": [
+              "e:sample",
+              "r:updated",
+              "p:witness_b"
+            ],
+            "weight": 2,
+            "group": "alternative",
+            "reliability": "valid"
+          }
+        ]
+      },
+      {
+        "suspect_id": "suspect_beta",
+        "criteria": [
+          {
+            "id": "misled",
+            "all_of": [
+              "e:misleading",
+              "r:initial"
+            ],
+            "weight": 2,
+            "group": "misleading",
+            "reliability": "misleading"
+          }
+        ]
+      }
+    ]
+  },
+  "campaign_effects": {
+    "proven": {
+      "reputation": 2,
+      "trust": {
+        "witness_a": 1
+      }
+    },
+    "failed": {
+      "reputation": -1,
+      "trust": {}
+    },
+    "wrongful_verdict": {
+      "reputation": -3,
+      "trust": {
+        "witness_b": -1
+      },
+      "flags": {
+        "previous_error": true
+      }
+    }
+  },
+  "requirements": {},
+  "allow_reopen": true
+}

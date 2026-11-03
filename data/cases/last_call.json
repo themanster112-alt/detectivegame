@@ -1,0 +1,2153 @@
+{
+  "schema_version": 2,
+  "revision": 3,
+  "id": "last_call",
+  "title": "المكالمة الأخيرة",
+  "target_duration_minutes": 18,
+  "visual_catalog_path": "res://assets/ui/last_call_visual_catalog.tres",
+  "accusation_label": "توجيه اتهام",
+  "case_file": {
+    "number": "CASE-001",
+    "crime_type": "murder",
+    "crime_label": "قتل داخل مكتب مغلق",
+    "summary": "عُثر على آدم النجار مقتولًا داخل مكتبه عند الساعة ١١:٤٧ ليلًا. الباب مغلق إلكترونيًا، ولا توجد علامات اقتحام واضحة، وأداة الجريمة مفقودة. لا نعرف بعد كيف غادر الفاعل أو من كان آخر من تحدث إلى آدم.",
+    "victim": {
+      "name": "آدم النجار، ٤٣ عامًا",
+      "background": "مدير تنفيذي في شركة استثمار تابعة لمجموعة الأفق."
+    },
+    "crime_scene": "adam_office"
+  },
+  "assistant": {
+    "name": "يزن · مساعد المحقق",
+    "briefing": "الكاميرات معطلة جزئيًا. تلقت ليلى مكالمة يُعتقد أنها بصوت آدم عند ١١:٢٧. لم نثبت أن الكلام مباشر؛ وقت الوفاة تقديري أيضًا. راجع أقوال المشتبه بهم الأربعة دون افتراض مسبق."
+  },
+  "start_location": "adam_office",
+  "locations": [
+    {
+      "id": "adam_office",
+      "name": "مكتب آدم",
+      "description": "مكتب الضحية؛ يمكن فحص الباب وسجلات العمل وما بقي على المكتب.",
+      "art": "office",
+      "requires": {}
+    },
+    {
+      "id": "reception",
+      "name": "الاستقبال",
+      "description": "نقطة الاستقبال وحفظ سجلات الاتصال والدخول. ليلى وسامر متاحان هنا.",
+      "art": "reception",
+      "requires": {}
+    }
+  ],
+  "people": [
+    {
+      "id": "nadine",
+      "name": "نادين مراد",
+      "role": "suspect",
+      "occupation": "المديرة المالية",
+      "location_id": "adam_office",
+      "position": [
+        0.7,
+        0.78
+      ],
+      "statement_ids": [
+        "nadine_visit",
+        "nadine_nothing"
+      ],
+      "requires": {},
+      "ai": {
+        "personality": "حذرة، دفاعية حين تُناقش مسؤوليات العمل.",
+        "speech_style": "رسمية ومقتضبة، تتجنب الجزم حين تُواجه بسجل مخالف.",
+        "knows": [
+          "nadine_argument_fact",
+          "nadine_statue_fact",
+          "nadine_bag_fact"
+        ],
+        "conceals": [
+          "nadine_finance_fact",
+          "nadine_hidden_truth",
+          "nadine_locker_response_fact",
+          "nadine_fibers_fact",
+          "nadine_audio_access_fact",
+          "nadine_finance_result_fact"
+        ],
+        "lies": [
+          "nadine_exit_fact",
+          "nadine_locker_fact"
+        ],
+        "known_evidence": [
+          "door_events",
+          "desk_inventory",
+          "finance_memo",
+          "locker_find",
+          "security_log",
+          "audio_archive",
+          "locker_access",
+          "bag_fibers",
+          "server_logs",
+          "fraud_ledger"
+        ]
+      }
+    },
+    {
+      "id": "layla",
+      "name": "ليلى",
+      "role": "both",
+      "occupation": "موظفة الاستقبال",
+      "location_id": "reception",
+      "position": [
+        0.14,
+        0.78
+      ],
+      "art_id": "layla",
+      "statement_ids": [
+        "layla_found",
+        "layla_call"
+      ],
+      "requires": {},
+      "ai": {
+        "personality": "متعاونة حين تثق بالمحقق، متوترة عند مناقشة دخول المكاتب وأوراق العمل.",
+        "speech_style": "مباشرة، تميز لاحقًا بين الاعتقاد والمشاهدة.",
+        "knows": [
+          "layla_call_question_fact",
+          "layla_recording_fact",
+          "layla_old_bell_fact",
+          "layla_recording_detail_fact",
+          "layla_cabinet_fact"
+        ],
+        "conceals": [
+          "layla_search_fact"
+        ],
+        "lies": [
+          "layla_office_visit_fact"
+        ],
+        "known_evidence": [
+          "call_recording",
+          "audio_archive",
+          "security_log",
+          "layla_file",
+          "door_events",
+          "locker_access"
+        ]
+      }
+    },
+    {
+      "id": "samer",
+      "name": "سامر",
+      "role": "suspect",
+      "occupation": "مسؤول الأنظمة",
+      "location_id": "reception",
+      "position": [
+        0.52,
+        0.78
+      ],
+      "statement_ids": [
+        "samer_cameras",
+        "samer_limits"
+      ],
+      "requires": {},
+      "ai": {
+        "personality": "دقيق في شرح الأنظمة، متحفظ ودفاعي عند مناقشة حدود صلاحياته.",
+        "speech_style": "مختصرة وواضحة، يذكر حدود كل نظام.",
+        "knows": [
+          "samer_access_fact",
+          "samer_time_fact",
+          "samer_replay_fact",
+          "samer_clock_check_fact",
+          "samer_audio_account_fact"
+        ],
+        "conceals": [
+          "samer_server_admission_fact"
+        ],
+        "lies": [
+          "samer_camera_cause_fact"
+        ],
+        "known_evidence": [
+          "door_events",
+          "call_log",
+          "call_recording",
+          "audio_archive",
+          "server_logs"
+        ]
+      }
+    },
+    {
+      "id": "mazen",
+      "name": "مازن",
+      "role": "suspect",
+      "occupation": "شريك آدم",
+      "location_id": "adam_office",
+      "position": [
+        0.85,
+        0.78
+      ],
+      "statement_ids": [
+        "mazen_dispute",
+        "mazen_call"
+      ],
+      "requires": {},
+      "ai": {
+        "personality": "حاد وقت النزاع، يحاول التقليل من شدة خلافه ويتحدث بتحفظ.",
+        "speech_style": "هادئة وقصيرة.",
+        "knows": [
+          "mazen_missed_fact",
+          "mazen_business_fact",
+          "mazen_departure_fact",
+          "mazen_departure_verified_fact"
+        ],
+        "conceals": [
+          "mazen_threat_admission_fact"
+        ],
+        "lies": [
+          "mazen_threat_denial_fact"
+        ],
+        "known_evidence": [
+          "call_log",
+          "mazen_threats",
+          "security_log"
+        ]
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "door_events",
+      "name": "سجل قفل مكتب آدم",
+      "description": "سجل مستقل للقفل: بطاقة ليلى دخلت ١٠:٣٦ وخرجت ١٠:٤٢؛ بطاقة نادين دخلت ١١:٠٢ وخرجت ١١:١٣. غلق الباب تلقائي بعد الخروج، ثم فُتح بصلاحية خدمة عند ١١:٤٧. السجل يثبت استخدام البطاقة، لا هوية حاملها وحده.",
+      "source": "وحدة القفل الإلكتروني",
+      "time": "١١:٠٢ و١١:١٣ و١١:٤٧",
+      "category": "رقمي",
+      "location_id": "adam_office",
+      "position": [
+        0.85,
+        0.42
+      ],
+      "requires": {}
+    },
+    {
+      "id": "desk_inventory",
+      "name": "موضع تمثال الميزان الفارغ",
+      "description": "موضع نظيف مستطيل في غبار رف المكتب، يطابق قاعدة جسم نُقل منه. سجل الجرد يسمي قطعة برونزية ثقيلة «الميزان». المكان وحده لا يحدد من أخذ القطعة أو وقت نقلها.",
+      "source": "ملف جرد المكتب",
+      "time": "الجرد أسبق من ليلة الحادث؛ وقت النقل مجهول",
+      "category": "وثيقة",
+      "location_id": "adam_office",
+      "position": [
+        0.515,
+        0.38
+      ],
+      "requires": {}
+    },
+    {
+      "id": "call_log",
+      "name": "سجل اتصالات رقم آدم",
+      "description": "سجل الشبكة: اتصال صادر إلى ليلى عند ١١:٢٧، واتصال إلى مازن عند ١١:٣٤ لم يُجب عنه. هذان توقيتا اتصال، لا إثبات لهوية المتحدث أو لوقت الوفاة.",
+      "source": "نسخة سجل الشبكة المرفقة بملفات المكتب",
+      "time": "١١:٢٧ و١١:٣٤",
+      "category": "رقمي",
+      "location_id": "adam_office",
+      "position": [
+        0.25,
+        0.5
+      ],
+      "requires": {}
+    },
+    {
+      "id": "finance_memo",
+      "name": "مسودة نقل المسؤولية",
+      "description": "مسودة أعدها آدم لإسناد توقيع نادين إلى تحويلات غير مطابقة لقرارات لجنة الاستثمار. تحمل ملاحظات تهدد بتحميلها المسؤولية. هذه قرينة ضغط محتمل؛ يلزم تدقيق المستندات قبل إثبات وجود احتيال.",
+      "source": "أوراق العمل في المكتب",
+      "time": "مسودة مؤرخة قبل الحادث بيوم",
+      "category": "وثيقة",
+      "location_id": "adam_office",
+      "position": [
+        0.6224999999999999,
+        0.535
+      ],
+      "requires": {}
+    },
+    {
+      "id": "call_recording",
+      "name": "تسجيل مكالمة ليلى",
+      "description": "حفظ نظام تسجيل مكالمات العمل مقطع اتصال ١١:٢٧. يسمع فيه صوت منسوب إلى آدم يقول: «اتركي الملف، سأتصل لاحقًا»، مع جرس قصير في الخلفية. لم يُتحقق بعد من كون الكلام مباشرًا.",
+      "source": "نظام تسجيل مكالمات الاستقبال",
+      "time": "١١:٢٧ ليلًا",
+      "category": "صوتي",
+      "location_id": "reception",
+      "position": [
+        0.555,
+        0.52
+      ],
+      "requires": {}
+    },
+    {
+      "id": "audio_archive",
+      "name": "مقطع أرشيفي بصوت آدم",
+      "description": "في أرشيف استقبال الشركة مقطع قديم بصوت آدم يتضمن الكلمات نفسها والوقفة نفسها وجرس المصعد السابق. يلزم مقارنته بتسجيل المكالمة قبل الجزم بمصدره.",
+      "source": "أرشيف الاتصالات المؤسسي",
+      "time": "تسجيل أقدم من تغيير جرس المصعد منذ أشهر",
+      "category": "صوتي",
+      "location_id": "reception",
+      "position": [
+        0.555,
+        0.52
+      ],
+      "requires": {}
+    },
+    {
+      "id": "security_log",
+      "name": "محضر الدخول وتفتيش الحقائب",
+      "description": "دخول نادين ١٠:٤٨ وخروجها ١١:٣٨. خروج مازن من الاستقبال ١٠:٥٢؛ سجل البوابة الخارجية يسجل مروره بسيارته ١٠:٥٤. تفتيش الحقائب كان لبلاغ منفصل عن حاسوب محمول برقم أصل، ولم يشمل تفتيش الجيوب أو مصادرة الهواتف؛ عدم وجود تمثال في الحقيبة لا ينفي نقله داخل المبنى.",
+      "source": "سجل أمن المدخل",
+      "time": "١٠:٤٨ و١٠:٥٢ و١٠:٥٤ و١١:٣٨",
+      "category": "وثيقة",
+      "location_id": "reception",
+      "position": [
+        0.8125,
+        0.6100000000000001
+      ],
+      "requires": {}
+    },
+    {
+      "id": "locker_find",
+      "name": "التمثال في خزانة الاستقبال",
+      "description": "تمثال «الميزان» البرونزي الثقيل ملفوف بقماش داخل خزانة ملفات الاستقبال، وعليه بقعة داكنة وألياف دقيقة. حُفظت القطعة للفحص؛ لا يُنسب الدم أو الألياف لشخص قبل طلب التحليل. هاتف آدم ليس ضمن المضبوطات.",
+      "source": "تفتيش خزانة ملفات الاستقبال",
+      "time": "وقت الإخفاء غير مثبت في المعاينة",
+      "category": "مادي",
+      "location_id": "reception",
+      "position": [
+        0.345,
+        0.56
+      ],
+      "requires": {
+        "evidence": [
+          "desk_inventory"
+        ]
+      }
+    },
+    {
+      "id": "statue_photo",
+      "name": "صورة أرشيفية لتمثال الميزان",
+      "description": "سجل صورة مؤرخة قبل أسبوع يظهر التمثال على رف مكتب آدم، بقاعدة مستطيلة واسم «الميزان». شكل القاعدة يطابق الأثر الفارغ؛ الصورة لا تثبت من نقله ليلة الحادث.",
+      "source": "أرشيف جرد المكتب",
+      "time": "قبل الحادث بأسبوع",
+      "category": "صورة مؤرشفة",
+      "location_id": "adam_office",
+      "position": [
+        0.515,
+        0.38
+      ],
+      "requires": {}
+    },
+    {
+      "id": "locker_access",
+      "name": "سجل فتح خزانة الاستقبال",
+      "description": "قارئ خزانة الملفات يسجل فتحًا ببطاقة نادين عند ١١:١٨ وإغلاقًا بعدها بدقيقة. لا توجد صورة لمحتويات ما وُضع داخلها. بطاقات أخرى مخولة بالخزانة؛ اقتران البطاقة بالأداة يحتاج أدلة إضافية.",
+      "source": "قارئ خزانة الملفات المستقل",
+      "time": "١١:١٨–١١:١٩",
+      "category": "رقمي",
+      "location_id": "reception",
+      "position": [
+        0.8125,
+        0.6100000000000001
+      ],
+      "requires": {}
+    },
+    {
+      "id": "bag_fibers",
+      "name": "عينات الألياف والحقيبة",
+      "description": "عينة ألياف من قماش لف التمثال ومن سطحه، مع عينة مرجعية من بطانة حقيبة نادين بعد إثبات ملكيتها وموافقتها على المقارنة. لم تُحدد المطابقة بالعين المجردة.",
+      "source": "محضر أخذ العينات المرجعية",
+      "time": "عند جمع العينات أثناء التحقيق",
+      "category": "مادي",
+      "location_id": "reception",
+      "position": [
+        0.6925,
+        0.5
+      ],
+      "requires": {
+        "evidence": [
+          "locker_find"
+        ],
+        "questions": [
+          "nadine_bag"
+        ]
+      }
+    },
+    {
+      "id": "server_logs",
+      "name": "سجلات الخوادم والكاميرات",
+      "description": "سجل التدقيق يحفظ أمر إيقاف تسجيل كاميرات الممر من جلسة سامر عند ١٠:٥٦، وتصدير ملفات غير مصرح به من ١٠:٥٧ إلى ١١:١٦. في سجل البوابة المؤسسية قراءة للمقطع الصوتي القديم بحساب نادين عند ١٠:٥٠. يلزم التحقق من الجلسات والأزمنة؛ لا يثبت الحساب هوية المستخدم وحده.",
+      "source": "نسخة محمية من سجلات التدقيق",
+      "time": "١٠:٥٠ و١٠:٥٦–١١:١٦",
+      "category": "رقمي",
+      "location_id": "adam_office",
+      "position": [
+        0.25,
+        0.5
+      ],
+      "requires": {}
+    },
+    {
+      "id": "mazen_threats",
+      "name": "رسائل تهديد مازن",
+      "description": "رسالة من حساب مازن إلى آدم عند ١٠:١٠: «إن لم تُنهِ هذا الأمر الليلة فسأقتلك». الرسالة تهديد صريح وخطير؛ لا تثبت تنفيذه أو بقاء صاحبها في المبنى.",
+      "source": "أرشيف مراسلات آدم",
+      "time": "١٠:١٠ ليلًا",
+      "category": "رقمي",
+      "location_id": "adam_office",
+      "position": [
+        0.25,
+        0.5
+      ],
+      "requires": {}
+    },
+    {
+      "id": "layla_file",
+      "name": "ملف شكوى شقيق ليلى",
+      "description": "ملف متابعة لخسارة استثمار باسم شقيق ليلى. توجد داخله ورقة ملاحظات بخط منسوب إليها. يظهر باعث محتمل لتفتيش الملفات، لا دليلًا على القتل أو وقت دخولها.",
+      "source": "أوراق شكاوى العملاء في المكتب",
+      "time": "الشكوى سابقة للحادث",
+      "category": "وثيقة",
+      "location_id": "adam_office",
+      "position": [
+        0.6224999999999999,
+        0.535
+      ],
+      "requires": {}
+    },
+    {
+      "id": "fraud_ledger",
+      "name": "دفتر التحويلات واعتمادات آدم",
+      "description": "مقارنة أولية لدفتر التحويلات مع قرارات اللجنة تكشف مبالغ لا تقابلها موافقات، وتعليمات اعتماد باسم آدم، ومسودة نقل مسؤوليتها إلى توقيع نادين. لا تُعتمد الأصالة أو المسؤولية النهائية دون التدقيق.",
+      "source": "ملفات الاستثمار المرفقة بالمسودة",
+      "time": "تواريخ أسبق من ليلة الحادث",
+      "category": "وثيقة",
+      "location_id": "adam_office",
+      "position": [
+        0.6224999999999999,
+        0.535
+      ],
+      "requires": {
+        "evidence": [
+          "finance_memo"
+        ]
+      }
+    }
+  ],
+  "statements": [
+    {
+      "id": "nadine_visit",
+      "person_id": "nadine",
+      "text": "ذهبت إلى آدم لمراجعة ملفات العمل. اختلفنا، ثم غادرت مكتبه حوالي الحادية عشرة وخمس دقائق.",
+      "status": "claimed",
+      "requires": {}
+    },
+    {
+      "id": "nadine_nothing",
+      "person_id": "nadine",
+      "text": "لم أخرج من مكتبه حاملة شيئًا. لا أعرف ما حدث بعد ذلك.",
+      "status": "claimed",
+      "requires": {}
+    },
+    {
+      "id": "layla_found",
+      "person_id": "layla",
+      "text": "أُبلغنا بالعثور على آدم الساعة الحادية عشرة وسبع وأربعين. لا أستطيع تحديد متى أُصيب.",
+      "status": "claimed",
+      "requires": {}
+    },
+    {
+      "id": "layla_call",
+      "person_id": "layla",
+      "text": "تلقيت مكالمة من رقمه عند الحادية عشرة وسبع وعشرين. حسبت الصوت صوته، لكنني لم أره؛ التسجيل محفوظ في نظام العمل.",
+      "status": "claimed",
+      "requires": {}
+    },
+    {
+      "id": "samer_cameras",
+      "person_id": "samer",
+      "text": "تعطل جزء من كاميرات المراقبة، لا جميع الأنظمة. سجل القفل الإلكتروني يعمل بصورة مستقلة عنها.",
+      "status": "claimed",
+      "requires": {}
+    },
+    {
+      "id": "samer_limits",
+      "person_id": "samer",
+      "text": "لا يمكنني إثبات وجود شخص من صورة غير متاحة. ما أستطيع شرحه هو ما تسجله الأنظمة وما لا تسجله.",
+      "status": "claimed",
+      "requires": {}
+    },
+    {
+      "id": "mazen_dispute",
+      "person_id": "mazen",
+      "text": "كان بيني وبين آدم خلاف مهني. هذا لا يفسر ما حدث في مكتبه، ولا أعرف من بقي معه.",
+      "status": "claimed",
+      "requires": {}
+    },
+    {
+      "id": "mazen_call",
+      "person_id": "mazen",
+      "text": "ظهر عندي اتصال من رقمه الساعة الحادية عشرة وأربع وثلاثين، لكنني لم أجب. لم أسمع صوته في ذلك الاتصال.",
+      "status": "claimed",
+      "requires": {}
+    }
+  ],
+  "facts": [
+    {
+      "id": "nadine_exit_fact",
+      "text": "خرجت حوالي الحادية عشرة وخمس دقائق. بطاقتي كانت معي وأستخدمها بنفسي، ولم أعد إلى مكتبه.",
+      "variants": [],
+      "requires": {}
+    },
+    {
+      "id": "nadine_argument_fact",
+      "text": "اختلفنا على ملفات العمل والمسؤوليات. لا أريد تحويل خلاف مهني إلى اتهام قبل أن تراجعوا المستندات.",
+      "variants": [],
+      "requires": {}
+    },
+    {
+      "id": "nadine_finance_fact",
+      "text": "هذه صياغة آدم، ولم أوافق على تحميل توقيعي قراراته. كنت أخشى أن أتحمل مسؤولية أعمال لا تخصني؛ لهذا أردت مواجهته.",
+      "variants": [],
+      "requires": {
+        "evidence": [
+          "finance_memo"
+        ]
+      }
+    },
+    {
+      "id": "nadine_statue_fact",
+      "text": "كان في المكتب من قبل، وقد أكون لمسته في زيارة سابقة. لا يمكنني تحديد وقت البصمة من شكلها، ولا أقر بأنني نقلته تلك الليلة.",
+      "variants": [],
+      "requires": {
+        "reports": [
+          "weapon_analysis"
+        ]
+      }
+    },
+    {
+      "id": "layla_call_question_fact",
+      "text": "وقت المكالمة ظننت أنني أسمع آدم يتحدث مباشرة. لم أره، وكان كلامه قصيرًا ولم يتحول إلى حوار؛ هذا اعتقاد وليس مشاهدة.",
+      "variants": [],
+      "requires": {}
+    },
+    {
+      "id": "layla_recording_fact",
+      "text": "نعم، يتولى النظام تسجيلها. يمكن مراجعة النسخة الأصلية ووقتها بدل الاعتماد على ذاكرتي.",
+      "variants": [],
+      "requires": {}
+    },
+    {
+      "id": "layla_old_bell_fact",
+      "text": "يشبه جرس المصعد القديم الذي تغير منذ أشهر. إذا طابق المقطع الأرشيفي فلا أستطيع الاستمرار في الجزم بأن الصوت كان مباشرًا.",
+      "variants": [],
+      "requires": {
+        "evidence": [
+          "call_recording",
+          "audio_archive"
+        ]
+      }
+    },
+    {
+      "id": "samer_access_fact",
+      "text": "لا. الكاميرات والقفل نظامان مستقلان. سجل الباب يذكر البطاقة والتوقيت، وليس هوية حاملها بصورة قاطعة.",
+      "variants": [],
+      "requires": {}
+    },
+    {
+      "id": "samer_time_fact",
+      "text": "لا؛ الدخول والخروج حدثان منفصلان عن وقت الإصابة. نافذة الطب الشرعي تقديرية، ولا يجوز تحويلها إلى دقيقة محددة.",
+      "variants": [],
+      "requires": {}
+    },
+    {
+      "id": "samer_replay_fact",
+      "text": "يمكن تشغيل مقطع على جهاز آخر قرب ميكروفون الهاتف أثناء الاتصال. هذا تفسير ممكن تقنيًا؛ المقارنة الصوتية هنا تدعم إعادة الاستخدام، لكنها لا تعين جهاز التشغيل أو الشخص.",
+      "variants": [],
+      "requires": {
+        "reports": [
+          "audio_analysis"
+        ]
+      }
+    },
+    {
+      "id": "mazen_missed_fact",
+      "text": "لم أجب، ولذلك لا أستطيع الشهادة بأن آدم كان المتحدث أو بأنه كان حيًا. ما أعرفه هو ظهور رقمه في سجل الاتصالات.",
+      "variants": [],
+      "requires": {}
+    },
+    {
+      "id": "mazen_business_fact",
+      "text": "نعم، خلاف يتعلق بالشراكة والعمل. لا أزعم أن هذا يبرئني وحده، لكنني لم أسمع منه حديثًا في الاتصال الذي فاتني.",
+      "variants": [],
+      "requires": {}
+    },
+    {
+      "id": "nadine_hidden_truth",
+      "text": "نادين تعرف أنها ضربت آدم بالتمثال وأخفت الأداة واستعملت هاتفه في مكالمتين لاحقتين.",
+      "variants": [],
+      "requires": {
+        "inferences": [
+          "motive_pressure"
+        ]
+      }
+    },
+    {
+      "id": "nadine_locker_fact",
+      "text": "لا، انتظرت عند المدخل ولم أفتح خزانة الملفات تلك الليلة.",
+      "variants": [],
+      "requires": {
+        "evidence": [
+          "desk_inventory"
+        ]
+      }
+    },
+    {
+      "id": "nadine_locker_response_fact",
+      "text": "ربما وضعت ملفات عمل هناك، لكنني لم أضع التمثال. لا أتراجع عن أن البطاقة كانت معي.",
+      "variants": [],
+      "requires": {
+        "contradictions": [
+          "nadine_locker_conflict"
+        ]
+      }
+    },
+    {
+      "id": "nadine_bag_fact",
+      "text": "نعم، هذه حقيبتي التي حملتها في المبنى. خذوا عينة من بطانتها بإثبات المحضر؛ التشابه لا يثبت أنني حملت تمثالًا.",
+      "variants": [],
+      "requires": {
+        "evidence": [
+          "locker_find",
+          "security_log"
+        ]
+      }
+    },
+    {
+      "id": "nadine_fibers_fact",
+      "text": "قد تنتقل ألياف بالتلامس، ولا أعرف وقت انتقالها. لا أنكر ملكية الحقيبة، لكنني لا أقر بوجود التمثال فيها.",
+      "variants": [],
+      "requires": {
+        "reports": [
+          "fiber_analysis"
+        ]
+      }
+    },
+    {
+      "id": "nadine_audio_access_fact",
+      "text": "دخلت البوابة بحسابي للاطلاع على مواد الشركة، وربما شغلت المقطع. إتاحته لا تعني أنني أجريت المكالمة.",
+      "variants": [],
+      "requires": {
+        "reports": [
+          "server_analysis"
+        ],
+        "evidence": [
+          "audio_archive"
+        ]
+      }
+    },
+    {
+      "id": "nadine_finance_result_fact",
+      "text": "كان ينوي تحميل توقيعي تحويلاته. واجهته لأنني رفضت أن أصبح المسؤولة عنها. أخفيت الخلاف خوفًا على عملي، وليس هذا اعترافًا بالقتل.",
+      "variants": [],
+      "requires": {
+        "reports": [
+          "finance_analysis"
+        ],
+        "questions": [
+          "nadine_finance"
+        ]
+      }
+    },
+    {
+      "id": "layla_office_visit_fact",
+      "text": "لم أدخل مكتبه تلك الليلة؛ بقيت في منطقة الاستقبال.",
+      "variants": [],
+      "requires": {}
+    },
+    {
+      "id": "layla_search_fact",
+      "text": "دخلت قبل الحادية عشرة وبحثت في ملفات آدم لأن أخي خسر استثماره. أخذت ملاحظات وأخفيت دخولي خوفًا من الفصل. هذا لا يبرر ما فعلته، لكنه سبب تفتيشي.",
+      "variants": [],
+      "requires": {
+        "evidence": [
+          "layla_file",
+          "door_events"
+        ],
+        "questions": [
+          "layla_office_visit"
+        ]
+      }
+    },
+    {
+      "id": "layla_recording_detail_fact",
+      "text": "قال جملة قصيرة ثم انتهت المكالمة. لم يجب عن سؤالي. ظننت أنه منشغل، ولم أتحقق حينها من أن الكلام مباشر.",
+      "variants": [],
+      "requires": {
+        "evidence": [
+          "call_recording"
+        ]
+      }
+    },
+    {
+      "id": "layla_cabinet_fact",
+      "text": "الخزانة مشتركة لأصحاب بطاقات مخولة، وليست حكرًا عليّ. لا أراقب محتويات كل ملف يضعه الموظفون فيها.",
+      "variants": [],
+      "requires": {
+        "evidence": [
+          "locker_access"
+        ]
+      }
+    },
+    {
+      "id": "samer_camera_cause_fact",
+      "text": "لا؛ بدا لي عطلًا فنيًا، ولم أتعمد إيقاف الكاميرات.",
+      "variants": [],
+      "requires": {}
+    },
+    {
+      "id": "samer_server_admission_fact",
+      "text": "أوقفت كاميرات الممر كي لا يظهر دخولي إلى الخوادم وتصدير ملفات لم أكن مخولًا بأخذها. فعلت ذلك لإخفاء مخالفتي، لا بناءً على طلب شخص آخر. هذه أقوالي، ولا تجعلوها وحدها دليل براءة أو قتل.",
+      "variants": [],
+      "requires": {
+        "reports": [
+          "server_analysis"
+        ],
+        "questions": [
+          "samer_camera_cause"
+        ]
+      }
+    },
+    {
+      "id": "samer_clock_check_fact",
+      "text": "الفحص يقارن الطوابع مع مرجع مستقل؛ فرقها لا يزيد على دقيقة في السجلات المتاحة. هذا لا يحول تقدير الطب الشرعي إلى ساعة وفاة محددة.",
+      "variants": [],
+      "requires": {
+        "reports": [
+          "movement_analysis"
+        ]
+      }
+    },
+    {
+      "id": "samer_audio_account_fact",
+      "text": "تثبت قراءة بالحساب قبل الاتصال، والمقطع كان متاحًا لموظفين مخولين. يلزم ربط ذلك بالحيازة والحركة؛ لا يحدد سجل التنزيل وحده المتصل.",
+      "variants": [],
+      "requires": {
+        "reports": [
+          "server_analysis",
+          "audio_analysis"
+        ]
+      }
+    },
+    {
+      "id": "mazen_threat_denial_fact",
+      "text": "كان خلاف عمل حادًا، لكنني لم أرسل تهديدًا بالقتل.",
+      "variants": [],
+      "requires": {}
+    },
+    {
+      "id": "mazen_threat_admission_fact",
+      "text": "نعم، كتبتها في غضب. أنكرت ذلك خوفًا من الاتهام، والتهديد مسؤولية أتحملها. لكنه ليس اعترافًا بأنني قتلته.",
+      "variants": [],
+      "requires": {
+        "evidence": [
+          "mazen_threats"
+        ],
+        "questions": [
+          "mazen_threat_denial"
+        ]
+      }
+    },
+    {
+      "id": "mazen_departure_fact",
+      "text": "غادرت الاستقبال عند العاشرة واثنتين وخمسين، وخرجت بسيارتي بعدها بدقيقتين. اطلبوا مقارنة سجل البوابة بالباب؛ لا تعتمدوا على قولي وحده.",
+      "variants": [],
+      "requires": {
+        "evidence": [
+          "security_log"
+        ]
+      }
+    },
+    {
+      "id": "mazen_departure_verified_fact",
+      "text": "لم أعد. أعرف أن غياب سجل عودة ليس وحده دليلًا مطلقًا؛ راجعوا الصورة المستقلة عند البوابة وأوقات الأنظمة.",
+      "variants": [],
+      "requires": {
+        "reports": [
+          "movement_analysis"
+        ],
+        "questions": [
+          "mazen_departure"
+        ]
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "nadine_exit",
+      "person_id": "nadine",
+      "label": "متى غادرتِ مكتب آدم؟",
+      "answer_facts": [
+        "nadine_exit_fact"
+      ],
+      "requires": {}
+    },
+    {
+      "id": "nadine_argument",
+      "person_id": "nadine",
+      "label": "ما موضوع الخلاف؟",
+      "answer_facts": [
+        "nadine_argument_fact"
+      ],
+      "requires": {}
+    },
+    {
+      "id": "nadine_finance",
+      "person_id": "nadine",
+      "label": "كيف تفسرين مسودة نقل المسؤولية؟",
+      "answer_facts": [
+        "nadine_finance_fact"
+      ],
+      "requires": {
+        "evidence": [
+          "finance_memo"
+        ]
+      }
+    },
+    {
+      "id": "nadine_statue",
+      "person_id": "nadine",
+      "label": "هل سبق أن لمستِ تمثال الميزان؟",
+      "answer_facts": [
+        "nadine_statue_fact"
+      ],
+      "requires": {
+        "reports": [
+          "weapon_analysis"
+        ]
+      }
+    },
+    {
+      "id": "layla_call_question",
+      "person_id": "layla",
+      "label": "هل تثبت المكالمة أن آدم كان حيًا؟",
+      "answer_facts": [
+        "layla_call_question_fact"
+      ],
+      "requires": {}
+    },
+    {
+      "id": "layla_recording",
+      "person_id": "layla",
+      "label": "هل تحفظون مكالمات العمل؟",
+      "answer_facts": [
+        "layla_recording_fact"
+      ],
+      "requires": {}
+    },
+    {
+      "id": "layla_old_bell",
+      "person_id": "layla",
+      "label": "هل تعرفين الجرس المسموع؟",
+      "answer_facts": [
+        "layla_old_bell_fact"
+      ],
+      "requires": {
+        "evidence": [
+          "call_recording",
+          "audio_archive"
+        ]
+      }
+    },
+    {
+      "id": "samer_access",
+      "person_id": "samer",
+      "label": "هل تعطل الكاميرات يعني تعطل الباب؟",
+      "answer_facts": [
+        "samer_access_fact"
+      ],
+      "requires": {}
+    },
+    {
+      "id": "samer_time",
+      "person_id": "samer",
+      "label": "هل يحدد سجل الباب وقت الوفاة؟",
+      "answer_facts": [
+        "samer_time_fact"
+      ],
+      "requires": {}
+    },
+    {
+      "id": "samer_replay",
+      "person_id": "samer",
+      "label": "كيف يمكن أن يظهر صوت قديم في مكالمة جديدة؟",
+      "answer_facts": [
+        "samer_replay_fact"
+      ],
+      "requires": {
+        "reports": [
+          "audio_analysis"
+        ]
+      }
+    },
+    {
+      "id": "mazen_missed",
+      "person_id": "mazen",
+      "label": "ماذا تعرف عن اتصال الحادية عشرة وأربع وثلاثين؟",
+      "answer_facts": [
+        "mazen_missed_fact"
+      ],
+      "requires": {}
+    },
+    {
+      "id": "mazen_business",
+      "person_id": "mazen",
+      "label": "هل كان بينكما خلاف؟",
+      "answer_facts": [
+        "mazen_business_fact"
+      ],
+      "requires": {}
+    },
+    {
+      "id": "nadine_locker",
+      "person_id": "nadine",
+      "label": "هل اقتربتِ من خزانة الاستقبال؟",
+      "answer_facts": [
+        "nadine_locker_fact"
+      ],
+      "requires": {
+        "evidence": [
+          "desk_inventory"
+        ]
+      }
+    },
+    {
+      "id": "nadine_locker_response",
+      "person_id": "nadine",
+      "label": "بطاقتك فتحت الخزانة عند الحادية عشرة وثماني عشرة؛ كيف تفسرين ذلك؟",
+      "answer_facts": [
+        "nadine_locker_response_fact"
+      ],
+      "requires": {
+        "contradictions": [
+          "nadine_locker_conflict"
+        ]
+      }
+    },
+    {
+      "id": "nadine_bag",
+      "person_id": "nadine",
+      "label": "هل هذه حقيبتك، وهل توافقين على مقارنة بطانتها؟",
+      "answer_facts": [
+        "nadine_bag_fact"
+      ],
+      "requires": {
+        "evidence": [
+          "locker_find",
+          "security_log"
+        ]
+      }
+    },
+    {
+      "id": "nadine_fibers",
+      "person_id": "nadine",
+      "label": "كيف تفسرين الألياف المتوافقة مع حقيبتك؟",
+      "answer_facts": [
+        "nadine_fibers_fact"
+      ],
+      "requires": {
+        "reports": [
+          "fiber_analysis"
+        ]
+      }
+    },
+    {
+      "id": "nadine_audio_access",
+      "person_id": "nadine",
+      "label": "لماذا قرأتِ المقطع الصوتي القديم قبل زيارتك؟",
+      "answer_facts": [
+        "nadine_audio_access_fact"
+      ],
+      "requires": {
+        "reports": [
+          "server_analysis"
+        ],
+        "evidence": [
+          "audio_archive"
+        ]
+      }
+    },
+    {
+      "id": "nadine_finance_result",
+      "person_id": "nadine",
+      "label": "التدقيق يربط المسودة بتعليمات آدم؛ لماذا واجهتِه؟",
+      "answer_facts": [
+        "nadine_finance_result_fact"
+      ],
+      "requires": {
+        "reports": [
+          "finance_analysis"
+        ],
+        "questions": [
+          "nadine_finance"
+        ]
+      }
+    },
+    {
+      "id": "layla_office_visit",
+      "person_id": "layla",
+      "label": "هل دخلتِ مكتب آدم قبل العثور عليه؟",
+      "answer_facts": [
+        "layla_office_visit_fact"
+      ],
+      "requires": {}
+    },
+    {
+      "id": "layla_search",
+      "person_id": "layla",
+      "label": "ما علاقتك بملف شكوى شقيقك؟",
+      "answer_facts": [
+        "layla_search_fact"
+      ],
+      "requires": {
+        "evidence": [
+          "layla_file",
+          "door_events"
+        ],
+        "questions": [
+          "layla_office_visit"
+        ]
+      }
+    },
+    {
+      "id": "layla_recording_detail",
+      "person_id": "layla",
+      "label": "هل استجاب المتصل لأسئلتك أثناء المكالمة؟",
+      "answer_facts": [
+        "layla_recording_detail_fact"
+      ],
+      "requires": {
+        "evidence": [
+          "call_recording"
+        ]
+      }
+    },
+    {
+      "id": "layla_cabinet",
+      "person_id": "layla",
+      "label": "من يستطيع استعمال خزانة الاستقبال؟",
+      "answer_facts": [
+        "layla_cabinet_fact"
+      ],
+      "requires": {
+        "evidence": [
+          "locker_access"
+        ]
+      }
+    },
+    {
+      "id": "samer_camera_cause",
+      "person_id": "samer",
+      "label": "هل أوقفت التسجيل بنفسك؟",
+      "answer_facts": [
+        "samer_camera_cause_fact"
+      ],
+      "requires": {}
+    },
+    {
+      "id": "samer_server_admission",
+      "person_id": "samer",
+      "label": "السجلات تربط أمر الإيقاف بجلستك؛ ما الذي أخفيته؟",
+      "answer_facts": [
+        "samer_server_admission_fact"
+      ],
+      "requires": {
+        "reports": [
+          "server_analysis"
+        ],
+        "questions": [
+          "samer_camera_cause"
+        ]
+      }
+    },
+    {
+      "id": "samer_clock_check",
+      "person_id": "samer",
+      "label": "هل سجلات الأبواب والخزانة متزامنة؟",
+      "answer_facts": [
+        "samer_clock_check_fact"
+      ],
+      "requires": {
+        "reports": [
+          "movement_analysis"
+        ]
+      }
+    },
+    {
+      "id": "samer_audio_account",
+      "person_id": "samer",
+      "label": "هل قراءة الملف بحساب نادين تثبت أنها اتصلت؟",
+      "answer_facts": [
+        "samer_audio_account_fact"
+      ],
+      "requires": {
+        "reports": [
+          "server_analysis",
+          "audio_analysis"
+        ]
+      }
+    },
+    {
+      "id": "mazen_threat_denial",
+      "person_id": "mazen",
+      "label": "هل هددت آدم بالقتل؟",
+      "answer_facts": [
+        "mazen_threat_denial_fact"
+      ],
+      "requires": {}
+    },
+    {
+      "id": "mazen_threat_admission",
+      "person_id": "mazen",
+      "label": "هذه رسالة تهديد من حسابك؛ هل كتبتها؟",
+      "answer_facts": [
+        "mazen_threat_admission_fact"
+      ],
+      "requires": {
+        "evidence": [
+          "mazen_threats"
+        ],
+        "questions": [
+          "mazen_threat_denial"
+        ]
+      }
+    },
+    {
+      "id": "mazen_departure",
+      "person_id": "mazen",
+      "label": "متى غادرت المبنى؟",
+      "answer_facts": [
+        "mazen_departure_fact"
+      ],
+      "requires": {
+        "evidence": [
+          "security_log"
+        ]
+      }
+    },
+    {
+      "id": "mazen_departure_verified",
+      "person_id": "mazen",
+      "label": "الفحص يضع خروجك قبل نافذة الوفاة؛ هل عدت؟",
+      "answer_facts": [
+        "mazen_departure_verified_fact"
+      ],
+      "requires": {
+        "reports": [
+          "movement_analysis"
+        ],
+        "questions": [
+          "mazen_departure"
+        ]
+      }
+    }
+  ],
+  "reports": [
+    {
+      "id": "forensic_initial",
+      "title": "تقرير الطب الشرعي الأولي",
+      "kind": "forensic",
+      "summary": "النتائج أولية. لا يصح اعتماد دقيقة محددة للوفاة أو استنتاج هوية المعتدي من التقرير وحده.",
+      "status": "preliminary",
+      "findings": [
+        "إصابة رضّية شديدة بالرأس تتفق مع ضربة بجسم صلب وثقيل.",
+        "الوقت التقديري يتأثر بظروف المكان والفحص؛ ليس توقيتًا قطعيًا."
+      ],
+      "cause_of_death": "ضربة قوية للرأس بجسم صلب وثقيل.",
+      "estimated_time": "بين ١١:٠٠ و١١:٢٠ ليلًا، تقدير قابل للمراجعة.",
+      "requires": {}
+    },
+    {
+      "id": "scene_initial",
+      "title": "محضر معاينة الموقع",
+      "kind": "technical",
+      "summary": "سُجل العثور على الجثة عند ١١:٤٧. كان الباب مغلقًا إلكترونيًا، ثم فُتح بصلاحية خدمة لدى الأمن. لا توجد علامات اقتحام واضحة، ولم تُحدد أداة الجريمة بعد.",
+      "status": "preliminary",
+      "findings": [
+        "تعطل جزئي في كاميرات المراقبة؛ لا تتوافر تغطية مرئية متصلة.",
+        "الغلق الإلكتروني لا يثبت استحالة الدخول أو الخروج ببطاقة معتمدة.",
+        "لم يُعثر على هاتف آدم أثناء المعاينة الأولية."
+      ],
+      "cause_of_death": "",
+      "estimated_time": "العثور: ١١:٤٧ ليلًا؛ لا يساوي وقت الوفاة.",
+      "requires": {}
+    },
+    {
+      "id": "audio_analysis",
+      "title": "نتيجة المقارنة الصوتية",
+      "kind": "technical",
+      "summary": "الكلمات وجرس المصعد في المقطع المسموع بمكالمة ١١:٢٧ يطابقان مقطع الأرشيف القديم، بما في ذلك موضع الوقفة والجرس. يرجّح إعادة تشغيل التسجيل؛ لا يحدد التحليل وحده من أجرى الاتصال.",
+      "status": "confirmed",
+      "findings": [
+        "الجرس المسموع يخص مصعدًا تغير نظام تنبيهه منذ أشهر.",
+        "رقم المتصل لا يحدد المتحدث الفعلي، ولا يثبت أن آدم كان حيًا وقت المكالمة.",
+        "إعادة التشغيل من جهاز ثانٍ إلى ميكروفون الهاتف ممكنة؛ لم تُثبت طريقة التوصيل أو جهاز التشغيل المستخدم في هذه الواقعة."
+      ],
+      "cause_of_death": "",
+      "estimated_time": "المكالمة المسجلة: ١١:٢٧ ليلًا.",
+      "requires": {
+        "evidence": [
+          "call_recording",
+          "audio_archive"
+        ]
+      },
+      "request_required": true,
+      "analysis_label": "قارن تسجيل المكالمة بالمقطع القديم"
+    },
+    {
+      "id": "weapon_analysis",
+      "title": "فحص التمثال المضبوط",
+      "kind": "forensic",
+      "summary": "تطابق دم آدم مع العينة المرفوعة من رأس التمثال، وشكل سطحه متوافق مع الإصابة. توجد بصمة جزئية منسوبة لنادين على المقبض؛ لا تؤرخ زمن ملامستها للقطعة.",
+      "status": "confirmed",
+      "findings": [
+        "اسم التمثال في سجل الجرد «الميزان»؛ مادته برونزية ووزنه يسمح بإحداث الإصابة الموصوفة.",
+        "لا يكفي تطابق الأداة أو البصمة وحدهما لإثبات تسلسل الحادث أو النية."
+      ],
+      "cause_of_death": "إصابة رضّية؛ الأداة المضبوطة متوافقة مع التقرير الأولي.",
+      "estimated_time": "يبقى تقدير الوفاة بين ١١:٠٠ و١١:٢٠؛ لا يحدده هذا الفحص بالدقيقة.",
+      "supersedes": "forensic_initial",
+      "requires": {
+        "evidence": [
+          "locker_find"
+        ]
+      },
+      "request_required": true,
+      "analysis_label": "حلّل آثار التمثال والبصمات"
+    },
+    {
+      "id": "fiber_analysis",
+      "title": "قارن الألياف ببطانة الحقيبة",
+      "analysis_label": "قارن الألياف ببطانة الحقيبة",
+      "kind": "technical",
+      "summary": "تتوافق الألياف المرفوعة من قماش لف التمثال ومن سطحه مع تركيب ولون بطانة حقيبة نادين. هذا يدعم تلامسًا أو نقلًا في الحقيبة، ولا يحدد التوقيت أو يستبعد حقائب من الفئة نفسها.",
+      "status": "confirmed",
+      "findings": [
+        "سلسلة أخذ العينات موثقة في المحضر.",
+        "النتيجة توافق صنفي، وليست بصمة ألياف فريدة لشخص واحد."
+      ],
+      "cause_of_death": "",
+      "estimated_time": "",
+      "requires": {
+        "evidence": [
+          "locker_find",
+          "bag_fibers"
+        ]
+      },
+      "request_required": true
+    },
+    {
+      "id": "server_analysis",
+      "title": "تحقق من سجلات الخوادم والكاميرات",
+      "analysis_label": "تحقق من سجلات الخوادم والكاميرات",
+      "kind": "technical",
+      "summary": "أمر إيقاف كاميرات الممر صدر من جلسة سامر عند ١٠:٥٦، وتبعه تصدير غير مصرح به حتى ١١:١٦. قراءة المقطع القديم عند ١٠:٥٠ من حساب نادين مثبتة في بوابة مستقلة.",
+      "status": "confirmed",
+      "findings": [
+        "الفحص يثبت الأفعال الرقمية والحسابات، لا كل حركة جسدية لأصحابها.",
+        "تعطيل الكاميرات وحده لا يثبت مشاركة صاحب الجلسة في القتل أو تنسيقًا مع موظف آخر.",
+        "إيقاف كاميرات الممر لا يعطل قارئ المكتب أو الخزانة أو كاميرا البوابة الخارجية المستقلة."
+      ],
+      "cause_of_death": "",
+      "estimated_time": "",
+      "requires": {
+        "evidence": [
+          "server_logs"
+        ]
+      },
+      "request_required": true
+    },
+    {
+      "id": "movement_analysis",
+      "title": "قارن سجلات الحركة وتزامن الساعات",
+      "analysis_label": "قارن سجلات الحركة وتزامن الساعات",
+      "kind": "technical",
+      "summary": "تتوافق الساعات المرجعية ضمن نحو دقيقة. الخروج المسجل لمازن ١٠:٥٢ تؤيده لقطة البوابة الخارجية المستقلة ١٠:٥٤، قبل نافذة الوفاة التقديرية؛ لا يظهر له دخول لاحق في السجلات المتاحة.",
+      "status": "confirmed",
+      "findings": [
+        "الأقفال تغلق تلقائيًا؛ لم يحتج الفاعل إلى بقاء آدم حيًا لإغلاق باب المكتب.",
+        "سجل الخزانة يضع بطاقة نادين عندها ١١:١٨، بعد خروج بطاقتها من المكتب ١١:١٣.",
+        "هذه قرينة قوية على مغادرة مازن، وليست تعهدًا بأن المراقبة تغطي كل احتمال.",
+        "وقت الضربة لا يثبت بالدقيقة من حركة البطاقات."
+      ],
+      "cause_of_death": "",
+      "estimated_time": "",
+      "requires": {
+        "evidence": [
+          "door_events",
+          "locker_access",
+          "security_log"
+        ]
+      },
+      "request_required": true
+    },
+    {
+      "id": "finance_analysis",
+      "title": "دقّق مستندات التحويلات",
+      "analysis_label": "دقّق مستندات التحويلات",
+      "kind": "technical",
+      "summary": "تؤيد مطابقة دفتر التحويلات مع الاعتمادات وجود عمليات احتيال بتوجيهات آدم، ومسودة كان ينوي بها تحميل نادين مسؤوليتها. لا يثبت التدقيق المالي وحده من ضربه أو أن نادين بريئة من كل مخالفة مالية.",
+      "status": "confirmed",
+      "findings": [
+        "تطابق نسخ الاعتماد مع سجلات اللجنة، مع الحفاظ على النسخ الأصلية.",
+        "يفصل التقرير الدافع المحتمل عن إثبات فعل القتل."
+      ],
+      "cause_of_death": "",
+      "estimated_time": "",
+      "requires": {
+        "evidence": [
+          "finance_memo",
+          "fraud_ledger"
+        ]
+      },
+      "request_required": true
+    }
+  ],
+  "timeline": [
+    {
+      "id": "death_window",
+      "time": "١١:٠٠–١١:٢٠ تقريبًا",
+      "text": "نافذة الوفاة الأولية؛ ليست توقيتًا قطعيًا.",
+      "status": "uncertain",
+      "order": 660,
+      "requires": {
+        "reports": [
+          "forensic_initial"
+        ]
+      }
+    },
+    {
+      "id": "discovery",
+      "time": "١١:٤٧",
+      "text": "وقت العثور على آدم وفتح الباب بصلاحية الخدمة.",
+      "status": "confirmed",
+      "order": 707,
+      "requires": {
+        "reports": [
+          "scene_initial"
+        ]
+      }
+    },
+    {
+      "id": "arrival",
+      "time": "١٠:٤٨",
+      "text": "دخول نادين وفق سجل الأمن.",
+      "status": "confirmed",
+      "order": 648,
+      "requires": {
+        "evidence": [
+          "security_log"
+        ]
+      }
+    },
+    {
+      "id": "office_entry",
+      "time": "١١:٠٢",
+      "text": "استخدام بطاقة نادين للدخول إلى المكتب.",
+      "status": "confirmed",
+      "order": 662,
+      "requires": {
+        "evidence": [
+          "door_events"
+        ]
+      }
+    },
+    {
+      "id": "office_exit",
+      "time": "١١:١٣",
+      "text": "استخدام بطاقة نادين عند قارئ خروج المكتب.",
+      "status": "confirmed",
+      "order": 673,
+      "requires": {
+        "evidence": [
+          "door_events"
+        ]
+      }
+    },
+    {
+      "id": "call_layla",
+      "time": "١١:٢٧",
+      "text": "اتصال من رقم آدم إلى ليلى؛ هوية المتحدث غير مثبتة بالتوقيت.",
+      "status": "confirmed",
+      "order": 687,
+      "requires": {
+        "evidence": [
+          "call_log"
+        ]
+      }
+    },
+    {
+      "id": "call_mazen",
+      "time": "١١:٣٤",
+      "text": "اتصال غير مجاب من رقم آدم إلى مازن.",
+      "status": "confirmed",
+      "order": 694,
+      "requires": {
+        "evidence": [
+          "call_log"
+        ]
+      }
+    },
+    {
+      "id": "departure",
+      "time": "١١:٣٨",
+      "text": "مغادرة نادين وفق محضر الأمن.",
+      "status": "confirmed",
+      "order": 698,
+      "requires": {
+        "evidence": [
+          "security_log"
+        ]
+      }
+    },
+    {
+      "id": "locker_open",
+      "time": "١١:١٨",
+      "text": "فتح خزانة الملفات ببطاقة نادين؛ لا يصور السجل محتوياتها.",
+      "status": "confirmed",
+      "order": 678,
+      "requires": {
+        "evidence": [
+          "locker_access"
+        ]
+      }
+    },
+    {
+      "id": "mazen_left",
+      "time": "١٠:٥٢–١٠:٥٤",
+      "text": "خروج مازن حسب سجل الاستقبال والبوابة المستقلة.",
+      "status": "confirmed",
+      "order": 652,
+      "requires": {
+        "reports": [
+          "movement_analysis"
+        ]
+      }
+    },
+    {
+      "id": "camera_stop",
+      "time": "١٠:٥٦",
+      "text": "أمر تعطيل كاميرات الممر وفق الفحص الرقمي.",
+      "status": "confirmed",
+      "order": 656,
+      "requires": {
+        "reports": [
+          "server_analysis"
+        ]
+      }
+    },
+    {
+      "id": "layla_visit",
+      "time": "١٠:٣٦–١٠:٤٢",
+      "text": "استخدام بطاقة ليلى قبل وصول نادين؛ يلزم تمييز الحضور عن سبب الزيارة.",
+      "status": "confirmed",
+      "order": 636,
+      "requires": {
+        "evidence": [
+          "door_events"
+        ]
+      }
+    },
+    {
+      "id": "archive_read",
+      "time": "١٠:٥٠",
+      "text": "قراءة للمقطع القديم بحساب نادين؛ لا تحدد وحدها من أجرى المكالمة.",
+      "status": "confirmed",
+      "order": 650,
+      "requires": {
+        "reports": [
+          "server_analysis"
+        ]
+      }
+    }
+  ],
+  "inference_options": [
+    {
+      "id": "same_source",
+      "label": "يرجّح أن الصوت من تسجيل سابق"
+    },
+    {
+      "id": "overlap",
+      "label": "يتقاطع الحضور مع نافذة الوفاة التقديرية"
+    },
+    {
+      "id": "compatible",
+      "label": "يدعم ارتباط الأداة بالإصابة"
+    },
+    {
+      "id": "pressure",
+      "label": "يدعم وجود ضغط مهني أو دافع محتمل"
+    },
+    {
+      "id": "live_call",
+      "label": "يثبت أن صاحب الرقم كان حيًا عند الاتصال"
+    },
+    {
+      "id": "movement",
+      "label": "يربط الحركة بموضع الإخفاء"
+    },
+    {
+      "id": "contact",
+      "label": "يدعم انتقال الأداة في الحقيبة"
+    },
+    {
+      "id": "independent",
+      "label": "يفصل المخالفة الجانبية عن القتل"
+    },
+    {
+      "id": "before_window",
+      "label": "يدعم مغادرة أسبق من نافذة الوفاة"
+    },
+    {
+      "id": "not_alive_proof",
+      "label": "المكالمة لا تثبت أن آدم كان حيًا"
+    },
+    {
+      "id": "storage_access",
+      "label": "يربط نادين بمكان إخفاء الأداة"
+    },
+    {
+      "id": "motive_limit",
+      "label": "الدافع المالي وحده لا يثبت القتل"
+    }
+  ],
+  "inferences": [
+    {
+      "id": "reused_audio",
+      "meaning": "same_source",
+      "links": [
+        "e:call_recording",
+        "e:audio_archive"
+      ],
+      "explanation": "التطابق بين المقطعين وجرس المصعد القديم يدعم إعادة تشغيل صوت سابق، ولا يحدد بمفرده من أجرى المكالمة.",
+      "requires": {
+        "reports": [
+          "audio_analysis"
+        ]
+      }
+    },
+    {
+      "id": "visit_window",
+      "meaning": "overlap",
+      "links": [
+        "e:door_events",
+        "r:forensic_initial"
+      ],
+      "explanation": "الفترة المسجلة لاستخدام بطاقة نادين تتقاطع مع نافذة الوفاة التقديرية. التقاطع قرينة حضور، وليس ساعة وفاة قطعية أو إثباتًا منفردًا للقتل.",
+      "requires": {}
+    },
+    {
+      "id": "weapon_link",
+      "meaning": "compatible",
+      "links": [
+        "e:locker_find",
+        "r:weapon_analysis"
+      ],
+      "explanation": "التمثال قد يكون أداة القتل: شكله متوافق مع الإصابة ويحمل دم آدم. بصمة نادين لا تؤرخ اللمسة ولا تثبت وحدها من وجّه الضربة.",
+      "requires": {}
+    },
+    {
+      "id": "motive_pressure",
+      "meaning": "pressure",
+      "links": [
+        "e:finance_memo",
+        "q:nadine_finance"
+      ],
+      "explanation": "المسودة ورد نادين يدعمان وجود ضغط مهني وشخصي عليها. الدافع المحتمل لا يثبت الفعل دون بقية الأدلة.",
+      "requires": {
+        "reports": [
+          "finance_analysis"
+        ]
+      }
+    },
+    {
+      "id": "statue_identity",
+      "meaning": "compatible",
+      "links": [
+        "e:desk_inventory",
+        "e:statue_photo"
+      ],
+      "explanation": "الموضع الفارغ والصورة الأرشيفية يدعمان هوية القطعة المفقودة، دون تحديد ناقلها.",
+      "requires": {}
+    },
+    {
+      "id": "concealment_route",
+      "meaning": "movement",
+      "links": [
+        "e:door_events",
+        "e:locker_access"
+      ],
+      "explanation": "استعمال بطاقة نادين للخروج ١١:١٣ ثم فتح الخزانة ١١:١٨ يجعل نقل قطعة بين الموضعين ممكنًا، وليس تسجيلًا مصورًا لعملية النقل.",
+      "requires": {}
+    },
+    {
+      "id": "bag_contact",
+      "meaning": "contact",
+      "links": [
+        "e:locker_find",
+        "r:fiber_analysis"
+      ],
+      "explanation": "التوافق بين ألياف اللف والحقيبة يدعم انتقالًا أو تلامسًا، ويقوى باقترانه بسجل الخزانة.",
+      "requires": {}
+    },
+    {
+      "id": "mazen_departed",
+      "meaning": "before_window",
+      "links": [
+        "e:mazen_threats",
+        "r:movement_analysis"
+      ],
+      "explanation": "التهديد ثابت، لكن قرائن المغادرة تسبق نافذة الوفاة؛ لا يثبت التهديد تنفيذه.",
+      "requires": {}
+    },
+    {
+      "id": "samer_separate_offense",
+      "meaning": "independent",
+      "links": [
+        "r:server_analysis",
+        "q:samer_server_admission"
+      ],
+      "explanation": "إخفاء الوصول للخوادم يفسر تعطيل الكاميرات بوصفه مخالفة مستقلة. الاعتراف بهذا لا يساوي اعترافًا بالقتل أو براءة منه.",
+      "requires": {}
+    },
+    {
+      "id": "layla_search_motive",
+      "meaning": "pressure",
+      "links": [
+        "e:layla_file",
+        "q:layla_search"
+      ],
+      "explanation": "خسارة شقيق ليلى تفسر بحثها في الملفات؛ لا تثبت نقل أداة الجريمة.",
+      "requires": {}
+    },
+    {
+      "id": "call_not_life",
+      "meaning": "not_alive_proof",
+      "links": [
+        "e:call_log",
+        "r:audio_analysis"
+      ],
+      "explanation": "وقت الاتصال يثبت نشاط الهاتف، لا حياة صاحبه. تطابق الصوت مع تسجيل قديم يسقط الاستدلال بالمكالمة وحدها على بقاء آدم حيًا.",
+      "requires": {}
+    },
+    {
+      "id": "nadine_storage",
+      "meaning": "storage_access",
+      "links": [
+        "e:locker_access",
+        "e:locker_find"
+      ],
+      "explanation": "استخدام بطاقة نادين للخزانة التي ضُبط فيها التمثال يربطها بموضع الإخفاء. البطاقة ليست تعريفًا بيومتريًا؛ تقوى القرينة بمسار الحركة والألياف.",
+      "requires": {}
+    },
+    {
+      "id": "motive_not_proof",
+      "meaning": "motive_limit",
+      "links": [
+        "r:finance_analysis",
+        "q:nadine_finance"
+      ],
+      "explanation": "الخلاف المالي يوضح دافعًا محتملًا، لكنه لا يحدد من وجّه الضربة. يلزم سند مستقل للحضور والأداة والإخفاء.",
+      "requires": {}
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "nadine_exit_conflict",
+      "person_id": "nadine",
+      "question_id": "nadine_exit",
+      "evidence_id": "door_events",
+      "explanation": "توقيت مغادرة المكتب الذي ذكرته نادين لا يطابق قارئ الخروج ١١:١٣. بعد قولها إن بطاقتها كانت معها، لا يمكن اعتماد ١١:٠٥ كوقت مغادرة ثابت؛ هذا لا يثبت القتل وحده.",
+      "requires": {}
+    },
+    {
+      "id": "call_not_live",
+      "person_id": "layla",
+      "question_id": "layla_call_question",
+      "evidence_id": "audio_archive",
+      "explanation": "تطابق المقطع القديم مع تسجيل العمل يسقط الجزم بأن الكلام كان مباشرًا الساعة ١١:٢٧. تراجع ليلى اعتقادها الأول، ولا يثبت ذلك أنها كانت متواطئة.",
+      "requires": {
+        "evidence": [
+          "call_recording"
+        ],
+        "reports": [
+          "audio_analysis"
+        ]
+      }
+    },
+    {
+      "id": "nadine_locker_conflict",
+      "person_id": "nadine",
+      "question_id": "nadine_locker",
+      "evidence_id": "locker_access",
+      "explanation": "إنكار الاقتراب من الخزانة لا يطابق فتحها ببطاقة نادين ١١:١٨، بعد تأكيدها أن البطاقة كانت معها. هذا يربط حركة محتملة ولا يشكل اعترافًا بالقتل.",
+      "requires": {}
+    },
+    {
+      "id": "layla_visit_conflict",
+      "person_id": "layla",
+      "question_id": "layla_office_visit",
+      "evidence_id": "door_events",
+      "explanation": "إنكار دخول ليلى لا يطابق استعمال بطاقتها ١٠:٣٦–١٠:٤٢. يلزم سؤالها عن الملف قبل تحويل هذا التناقض إلى اتهام بالقتل.",
+      "requires": {}
+    },
+    {
+      "id": "samer_camera_conflict",
+      "person_id": "samer",
+      "question_id": "samer_camera_cause",
+      "evidence_id": "server_logs",
+      "explanation": "الفحص ينسب إيقاف التسجيل إلى أمر من جلسة سامر، لا إلى عطل تلقائي كما زعم. لا يثبت هذا أنه قتل آدم.",
+      "requires": {
+        "reports": [
+          "server_analysis"
+        ]
+      }
+    },
+    {
+      "id": "mazen_threat_conflict",
+      "person_id": "mazen",
+      "question_id": "mazen_threat_denial",
+      "evidence_id": "mazen_threats",
+      "explanation": "الرسالة لا تتفق مع إنكار التهديد. التهديد قرينة دافع محتمل، ويجب موازنته بأدلة المغادرة.",
+      "requires": {}
+    }
+  ],
+  "truth": {
+    "culprit_ids": [
+      "nadine"
+    ],
+    "summary": "نادين قتلت آدم نحو ١١:٠٩ بضربة بتمثال «الميزان» خلال خلاف على احتيال مالي كان يريد تحميلها مسؤوليته. خرجت ١١:١٣ بالأداة وهاتفه، وأخفت التمثال في خزانة الاستقبال ١١:١٨ قبل تفتيش الحقائب. استعملت الهاتف لإجراء اتصال ١١:٢٧ مع تشغيل تسجيل قديم من جهازها إلى ميكروفونه، ثم اتصال غير مجاب إلى مازن ١١:٣٤، وغادرت ١١:٣٨. ليلى أخفت تفتيش ملفات آدم بسبب خسارة شقيقها؛ سامر عطّل الكاميرات ليخفي وصوله غير المصرح إلى الخوادم؛ مازن هدد آدم ثم غادر قبل القتل. هذه الأسرار لا تجعلهم جميعًا شركاء. النتيجة تقوم على ربط الأداة والحركة والإخفاء والدافع أو الاتصال المصطنع، لا على توقيت الوفاة التقديري أو اسم المتهم وحده.",
+    "timeline": [
+      {
+        "time": "22:48",
+        "event": "وصول نادين."
+      },
+      {
+        "time": "23:02",
+        "event": "دخول المكتب."
+      },
+      {
+        "time": "23:09",
+        "event": "الضربة بتمثال الميزان خلال الشجار؛ توقيت سردي سري لا نتيجة طبية قطعية."
+      },
+      {
+        "time": "23:13",
+        "event": "الخروج بالأداة وهاتف آدم الذي كان مفتوح الجلسة؛ أبقته نشطًا حتى انتهاء المكالمتين."
+      },
+      {
+        "time": "23:18",
+        "event": "إخفاء التمثال في خزانة الاستقبال."
+      },
+      {
+        "time": "23:27",
+        "event": "مكالمة لليلى من هاتف آدم نفسه. شغلت نادين المقطع القديم على جهازها قرب ميكروفون هاتف آدم؛ لم تستنسخ الشريحة ولم تحتج إلى انتحال رقم جديد."
+      },
+      {
+        "time": "23:34",
+        "event": "الاتصال بمازن من هاتف آدم، دون إجابة ودون محادثة أو تسجيل ثانٍ."
+      },
+      {
+        "time": "23:38",
+        "event": "الخروج مع الهاتف في الجيب. التفتيش كان للحقائب بحثًا عن حاسوب محدد، وليس تفتيشًا شخصيًا أو مصادرة للهواتف."
+      },
+      {
+        "time": "23:47",
+        "event": "اكتشاف الجثة."
+      }
+    ],
+    "phone_limits": "قراءة نادين للمقطع القديم ١٠:٥٠ تتيح ملف التشغيل قبل المكالمة. بقاء الهاتف مفتوحًا ونشطًا يفسر المكالمتين في الحقيقة السرية، لكن الهاتف لم يُضبط فلا يدعي التقرير العام معرفة طريقة فتحه أو جهاز التشغيل يقينًا. خرج الهاتف معها في الجيب؛ مكانه بعد الخروج وكيفية التخلص منه غير موثّقين، ولا تُخترع له واقعة العثور أو الإتلاف.",
+    "other_secrets": {
+      "layla": "فتشت ملفات آدم قبل وصول نادين بسبب خسارة شقيقها.",
+      "samer": "أوقف كاميرات الممر ليخفي دخولًا غير مصرح به إلى الخوادم وتصدير ملفات، لا لمساعدة القاتلة.",
+      "mazen": "كتب تهديد القتل ثم غادر ١٠:٥٢، وعبر البوابة ١٠:٥٤ قبل القتل."
+    }
+  },
+  "assessment": {
+    "threshold": 8,
+    "minimum_groups": 4,
+    "profiles": [
+      {
+        "suspect_id": "nadine",
+        "criteria": [
+          {
+            "id": "presence",
+            "all_of": [
+              "e:door_events",
+              "q:nadine_exit"
+            ],
+            "weight": 2,
+            "group": "presence",
+            "reliability": "valid"
+          },
+          {
+            "id": "weapon",
+            "all_of": [
+              "e:locker_find",
+              "r:weapon_analysis",
+              "i:weapon_link"
+            ],
+            "weight": 2,
+            "group": "weapon",
+            "reliability": "valid"
+          },
+          {
+            "id": "concealment",
+            "all_of": [
+              "e:locker_access",
+              "r:fiber_analysis",
+              "q:nadine_bag"
+            ],
+            "weight": 2,
+            "group": "concealment",
+            "reliability": "valid"
+          },
+          {
+            "id": "motive",
+            "all_of": [
+              "e:finance_memo",
+              "r:finance_analysis",
+              "q:nadine_finance"
+            ],
+            "weight": 2,
+            "group": "motive",
+            "reliability": "valid"
+          },
+          {
+            "id": "staging",
+            "all_of": [
+              "e:call_log",
+              "r:audio_analysis",
+              "r:server_analysis",
+              "i:reused_audio"
+            ],
+            "weight": 2,
+            "group": "staging",
+            "reliability": "valid"
+          }
+        ]
+      },
+      {
+        "suspect_id": "layla",
+        "criteria": []
+      },
+      {
+        "suspect_id": "samer",
+        "criteria": []
+      },
+      {
+        "suspect_id": "mazen",
+        "criteria": [
+          {
+            "id": "threat",
+            "all_of": [
+              "e:mazen_threats",
+              "q:mazen_threat_admission"
+            ],
+            "weight": 2,
+            "group": "threat",
+            "reliability": "misleading",
+            "none_of": [
+              "r:movement_analysis",
+              "i:mazen_departed",
+              "q:mazen_departure_verified"
+            ]
+          },
+          {
+            "id": "business",
+            "all_of": [
+              "s:mazen_dispute",
+              "q:mazen_business"
+            ],
+            "weight": 2,
+            "group": "dispute",
+            "reliability": "misleading",
+            "none_of": [
+              "r:movement_analysis",
+              "i:mazen_departed",
+              "q:mazen_departure_verified"
+            ]
+          },
+          {
+            "id": "false_denial",
+            "all_of": [
+              "q:mazen_threat_denial",
+              "c:mazen_threat_conflict"
+            ],
+            "weight": 2,
+            "group": "credibility",
+            "reliability": "misleading",
+            "none_of": [
+              "r:movement_analysis",
+              "i:mazen_departed",
+              "q:mazen_departure_verified"
+            ]
+          },
+          {
+            "id": "missed_contact",
+            "all_of": [
+              "e:call_log",
+              "q:mazen_missed"
+            ],
+            "weight": 2,
+            "group": "contact",
+            "reliability": "misleading",
+            "none_of": [
+              "r:movement_analysis",
+              "i:mazen_departed",
+              "q:mazen_departure_verified"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "campaign_effects": {
+    "proven": {
+      "reputation": 2,
+      "trust": {
+        "layla": 1,
+        "samer": 1
+      }
+    },
+    "failed": {
+      "reputation": -1,
+      "trust": {}
+    },
+    "wrongful_verdict": {
+      "reputation": -3,
+      "trust": {}
+    }
+  },
+  "allow_reopen": true,
+  "requirements": {},
+  "presentation": {
+    "hotspots": [
+      {
+        "id": "inspect_door_events",
+        "evidence_id": "door_events",
+        "location_id": "adam_office",
+        "rect": [
+          0.9,
+          0.4,
+          0.06,
+          0.1
+        ],
+        "label": "قراءة سجل القفل",
+        "art_match": false,
+        "collectible": true
+      },
+      {
+        "id": "inspect_desk_inventory",
+        "evidence_id": "desk_inventory",
+        "location_id": "adam_office",
+        "rect": [
+          0.6,
+          0.48,
+          0.06,
+          0.1
+        ],
+        "label": "معاينة الموضع الفارغ",
+        "art_match": false,
+        "collectible": true
+      },
+      {
+        "id": "inspect_call_log",
+        "evidence_id": "call_log",
+        "location_id": "adam_office",
+        "rect": [
+          0.25,
+          0.48,
+          0.06,
+          0.1
+        ],
+        "label": "قراءة سجل الاتصالات",
+        "art_match": false,
+        "collectible": true
+      },
+      {
+        "id": "inspect_finance_memo",
+        "evidence_id": "finance_memo",
+        "location_id": "adam_office",
+        "rect": [
+          0.48,
+          0.53,
+          0.06,
+          0.1
+        ],
+        "label": "مراجعة المسودة",
+        "art_match": false,
+        "collectible": true
+      },
+      {
+        "id": "inspect_call_recording",
+        "evidence_id": "call_recording",
+        "location_id": "reception",
+        "rect": [
+          0.51,
+          0.47,
+          0.065,
+          0.1
+        ],
+        "label": "مراجعة التسجيل المحفوظ",
+        "art_match": false,
+        "collectible": true
+      },
+      {
+        "id": "inspect_audio_archive",
+        "evidence_id": "audio_archive",
+        "location_id": "reception",
+        "rect": [
+          0.64,
+          0.38,
+          0.065,
+          0.1
+        ],
+        "label": "مراجعة الأرشيف الصوتي",
+        "art_match": false,
+        "collectible": true
+      },
+      {
+        "id": "inspect_security_log",
+        "evidence_id": "security_log",
+        "location_id": "reception",
+        "rect": [
+          0.79,
+          0.59,
+          0.065,
+          0.1
+        ],
+        "label": "قراءة محضر المدخل",
+        "art_match": false,
+        "collectible": true
+      },
+      {
+        "id": "inspect_locker_find",
+        "evidence_id": "locker_find",
+        "location_id": "reception",
+        "rect": [
+          0.29,
+          0.5,
+          0.065,
+          0.1
+        ],
+        "label": "فحص المحتويات",
+        "art_match": false,
+        "collectible": true
+      },
+      {
+        "id": "inspect_statue_photo",
+        "evidence_id": "statue_photo",
+        "location_id": "adam_office",
+        "rect": [
+          0.72,
+          0.34,
+          0.06,
+          0.1
+        ],
+        "label": "مراجعة صورة الجرد",
+        "art_match": false,
+        "collectible": true
+      },
+      {
+        "id": "inspect_locker_access",
+        "evidence_id": "locker_access",
+        "location_id": "reception",
+        "rect": [
+          0.39,
+          0.65,
+          0.065,
+          0.1
+        ],
+        "label": "قراءة سجل الخزانة",
+        "art_match": false,
+        "collectible": true
+      },
+      {
+        "id": "inspect_bag_fibers",
+        "evidence_id": "bag_fibers",
+        "location_id": "reception",
+        "rect": [
+          0.63,
+          0.65,
+          0.065,
+          0.1
+        ],
+        "label": "رفع العينات المرجعية",
+        "art_match": false,
+        "collectible": true
+      },
+      {
+        "id": "inspect_server_logs",
+        "evidence_id": "server_logs",
+        "location_id": "adam_office",
+        "rect": [
+          0.42,
+          0.29,
+          0.06,
+          0.1
+        ],
+        "label": "استخراج سجلات التدقيق",
+        "art_match": false,
+        "collectible": true
+      },
+      {
+        "id": "inspect_mazen_threats",
+        "evidence_id": "mazen_threats",
+        "location_id": "adam_office",
+        "rect": [
+          0.35,
+          0.51,
+          0.06,
+          0.1
+        ],
+        "label": "مراجعة المراسلات",
+        "art_match": false,
+        "collectible": true
+      },
+      {
+        "id": "inspect_layla_file",
+        "evidence_id": "layla_file",
+        "location_id": "adam_office",
+        "rect": [
+          0.8,
+          0.65,
+          0.06,
+          0.1
+        ],
+        "label": "فحص ملف الشكوى",
+        "art_match": false,
+        "collectible": true
+      },
+      {
+        "id": "inspect_fraud_ledger",
+        "evidence_id": "fraud_ledger",
+        "location_id": "adam_office",
+        "rect": [
+          0.64,
+          0.66,
+          0.06,
+          0.1
+        ],
+        "label": "مقارنة دفاتر التحويلات",
+        "art_match": false,
+        "collectible": true
+      }
+    ],
+    "closing_hint": {
+      "title": "ورقة بلا توقيع",
+      "text": "بعد إغلاق الملف، تظهر إحالة مقتضبة بين الأوراق: «مشروع الصمت — S-04». لا اسم مرسل، ولا شرح لما يشير إليه الرمز."
+    },
+    "interrogation_min_evidence": 8
+  }
+}
